@@ -1,0 +1,42 @@
+%btn{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 3px;
+
+    /*&:hover{
+        transform: scale(1.05);
+
+    }*/
+    /*&:active{
+        transform: scale(.97);
+    }*/
+}
+
+.btn-primary{
+    @extend %btn;
+    //background-color: lighten($pc,10%);
+    @include set-background(lighten($pc, 10%));
+
+    &:hover{
+        transform: scale(1.05);
+    }
+    &:active{
+        transform: scale(.97);
+        @include set-background(darken($pc, 5%));
+    }
+}
+
+.btn-secondary{
+    @extend %btn;
+    //background-color: $sc;
+    @include set-background($sc);
+
+    &:hover{
+        transform: scale(1.05);
+    }
+    &:active{
+        transform: scale(.97);
+        @include set-background(darken($sc, 10%));
+    }
+}

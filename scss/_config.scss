@@ -1,0 +1,21 @@
+$ff: Arial, Helvetica, sans-serif;
+$lc: #f4f4f4;
+$pc: #0e6eff;
+//$pc: #e0ffff;
+$sc: #ff8700;
+
+//set text color based on bg color
+@function set-text-color($color){
+    @if(lightness($color) > 70){
+        @return #333;
+    }
+    @else{
+        @return #fff;
+    }
+}
+
+//set bg & text color
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+}
